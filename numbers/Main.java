@@ -72,10 +72,10 @@ public class Main {
                             "Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SQUARE, SUNNY]%n", input.get(2).toUpperCase(), input.get(3).toUpperCase());
                 } else if (!propertiesList.contains(input.get(2).toUpperCase())) {
                     System.out.printf("The property [%s] is wrong.\n" +
-                            "Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SQUARE, SUNNY]%n", input.get(2).toUpperCase());
+                    "Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SQUARE, SUNNY]%n", input.get(2).toUpperCase());
                 } else if (!propertiesList.contains(input.get(3).toUpperCase())) {
                     System.out.printf("The property [%s] is wrong.\n" +
-                            "Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SQUARE, SUNNY]%n", input.get(3).toUpperCase());
+                    "Available properties: [EVEN, ODD, BUZZ, DUCK, PALINDROMIC, GAPFUL, SPY, SQUARE, SUNNY]%n", input.get(3).toUpperCase());
                 } else if (!mutuallyExclusiveProperties(input)) {
                     System.out.printf("The request contains mutually exclusive properties: [%s, %s]%n" +
                             "There are no numbers with these properties.%n", input.get(2).toUpperCase(), input.get(3).toUpperCase());
@@ -91,7 +91,7 @@ public class Main {
         boolean check = true;
 
         if ("even".equalsIgnoreCase(input.get(2)) && "odd".equalsIgnoreCase(input.get(3)) ||
-                "odd".equalsIgnoreCase(input.get(2)) && "even".equalsIgnoreCase(input.get(3))) {
+            "odd".equalsIgnoreCase(input.get(2)) && "even".equalsIgnoreCase(input.get(3))) {
             check = false;
         }
 
@@ -127,8 +127,8 @@ public class Main {
         System.out.printf("palindromic : %s%n", checkTrueFalse(isPalindromic(a)));
         System.out.printf("gapful : %s%n", checkTrueFalse(isGapfulNumbers(a)));
         System.out.printf("spy : %s%n", checkTrueFalse(isSpyNumber(a)));
-        /*System.out.printf("square : %s%n", checkTrueFalse(isSquare(a)));
-        System.out.printf("sunny : %s%n", checkTrueFalse(isSunny(a)));*/
+        System.out.printf("square : %s%n", checkTrueFalse(isSquare(a)));
+        System.out.printf("sunny : %s%n", checkTrueFalse(isSunny(a)));
         System.out.printf("even : %s%n", checkTrueFalse(isEven(a)));
         System.out.printf("odd : %s%n", checkTrueFalse(isOdd(a)));
     }
@@ -137,27 +137,27 @@ public class Main {
         int b = Integer.parseInt(second);
         BigInteger count = BigInteger.ZERO;
         BigInteger operator = a;
-        for (int i = 0; i < b; i++) {
-            List<String> properties = new ArrayList<>();
-            properties.add(isBuzz(operator.add(count)));
-            properties.add(isDuck(operator.add(count)));
-            properties.add(isPalindromic(operator.add(count)));
-            properties.add(isGapfulNumbers(operator.add(count)));
-            properties.add(isSpyNumber(operator.add(count)));
-           /* properties.add(isSquare(operator.add(count)));
-            properties.add(isSunny(operator.add(count)));*/
-            properties.add(isEven(operator.add(count)));
-            properties.add(isOdd(operator.add(count)));
+            for (int i = 0; i < b; i++) {
+                List<String> properties = new ArrayList<>();
+                properties.add(isBuzz(operator.add(count)));
+                properties.add(isDuck(operator.add(count)));
+                properties.add(isPalindromic(operator.add(count)));
+                properties.add(isGapfulNumbers(operator.add(count)));
+                properties.add(isSpyNumber(operator.add(count)));
+                properties.add(isSquare(operator.add(count)));
+                properties.add(isSunny(operator.add(count)));
+                properties.add(isEven(operator.add(count)));
+                properties.add(isOdd(operator.add(count)));
 
-            System.out.printf("%s is", operator.add(count) );
-            for (String property : properties) {
-                if (!property.isEmpty()) {
-                    System.out.printf(" %s,", property);
+                System.out.printf("%s is", operator.add(count) );
+                for (String property : properties) {
+                    if (!property.isEmpty()) {
+                        System.out.printf(" %s,", property);
+                    }
                 }
+                System.out.printf("%n");
+                count = count.add(BigInteger.ONE);
             }
-            System.out.printf("%n");
-            count = count.add(BigInteger.ONE);
-        }
     }
 
     private static void properties(String number, String amount, String property1) {
