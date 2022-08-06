@@ -23,48 +23,35 @@ public class Main {
                 naturalNumber = false;
             } else {
                 number = Integer.parseInt(input);
-                checkingOddEven(number);
+                properties(number);
             }
         //} while (!naturalNumber);
 
     }
 
-    private static void checkingOddEven(int number) {
-        if (number % 2 == 0) {
-            System.out.println("This number is Even.");
-        } else {
-            System.out.println("This number is Odd.");
-        }
-        checkingBuzz(number);
+    private static void properties(int number) {
+        System.out.printf("Properties of %d%n", number);
+        System.out.println("        even: " + isEven(number));
+        System.out.println("         odd: " + isOdd(number));
+        System.out.println("        buzz: " + isBuzz(number));
+        System.out.println("        duck: " + isDuck(number));
     }
 
-    private static void checkingBuzz(int number) {
-        boolean divisibleBySeven = false;
-        boolean endWithSeven = false;
 
-        if ((number % 10) == buzzNumber) {
-            endWithSeven = true;
-        }
-        if (number % buzzNumber == 0 || number == buzzNumber) {
-            divisibleBySeven = true;
-        }
+    private static boolean isOdd(int number) {
+        return number % 2 != 0;
+    }
 
-        if (divisibleBySeven && endWithSeven) {
-            System.out.println("It is a Buzz number.");
-            System.out.printf("Explanation:%n%d is divisible by 7 and ends with 7.%n", number);
-        } else if (divisibleBySeven) {
-            System.out.println("It is a Buzz number.");
-            System.out.printf("Explanation:%n%d is divisible by 7.%n", number);
-        } else if (endWithSeven) {
-            System.out.println("It is a Buzz number.");
-            System.out.printf("Explanation:%n%d ends with 7.%n", number);
-        } else {
-            System.out.println("It is not a Buzz number.");
-            System.out.printf("Explanation:%n%d is neither divisible by 7 nor does it end with 7.%n", number);
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
 
-        }
+    private static boolean isBuzz(int number) {
+        return number % 10 == buzzNumber || number % buzzNumber == 0 || number == buzzNumber;
 
+    }
 
-
+    private static boolean isDuck(int number) {
+        return String.valueOf(number).lastIndexOf('0') > 0;
     }
 }
