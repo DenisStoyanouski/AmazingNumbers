@@ -191,7 +191,7 @@ public class Main {
                     System.out.printf(" %s,", property.name().toLowerCase());
                 }
             }
-            System.out.println("");
+            System.out.println();
             a = a.add(BigInteger.ONE);
         }
     }
