@@ -126,8 +126,8 @@ public class Main {
         System.out.printf("duck : %s%n", checkTrueFalse(isDuck(a)));
         System.out.printf("palindromic : %s%n", checkTrueFalse(isPalindromic(a)));
         System.out.printf("gapful : %s%n", checkTrueFalse(isGapfulNumbers(a)));
-        /*System.out.printf("spy : %s%n", checkTrueFalse(isSpyNumber(a)));
-        System.out.printf("square : %s%n", checkTrueFalse(isSquare(a)));
+        System.out.printf("spy : %s%n", checkTrueFalse(isSpyNumber(a)));
+        /*System.out.printf("square : %s%n", checkTrueFalse(isSquare(a)));
         System.out.printf("sunny : %s%n", checkTrueFalse(isSunny(a)));*/
         System.out.printf("even : %s%n", checkTrueFalse(isEven(a)));
         System.out.printf("odd : %s%n", checkTrueFalse(isOdd(a)));
@@ -143,8 +143,8 @@ public class Main {
             properties.add(isDuck(operator.add(count)));
             properties.add(isPalindromic(operator.add(count)));
             properties.add(isGapfulNumbers(operator.add(count)));
-           /* properties.add(isSpyNumber(operator.add(count)));
-            properties.add(isSquare(operator.add(count)));
+            properties.add(isSpyNumber(operator.add(count)));
+           /* properties.add(isSquare(operator.add(count)));
             properties.add(isSunny(operator.add(count)));*/
             properties.add(isEven(operator.add(count)));
             properties.add(isOdd(operator.add(count)));
